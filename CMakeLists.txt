@@ -3,7 +3,7 @@
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
-project(hw8-async VERSION ${PROJECT_VESRION})
+project(async VERSION ${PROJECT_VESRION})
 
 
 set(CMD_SRC            "lib/dispatcher/command/icommand.h" 
@@ -79,6 +79,7 @@ target_link_libraries(bulk_async_test ${CMAKE_THREAD_LIBS_INIT} libasync_static 
 # Copy output
 file(COPY ${PROJECT_SOURCE_DIR}/lib/bulk_async.h DESTINATION ${CMAKE_BINARY_DIR}/Otus_11)
 
+install(TARGETS bulk_async_test  DESTINATION bin/lib/)
 install(TARGETS libasync  DESTINATION bin/lib/)
 install(TARGETS libasync_static  DESTINATION bin/lib/)
 install(FILES ${PROJECT_SOURCE_DIR}/lib/bulk_async.h DESTINATION bin/lib/)

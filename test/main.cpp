@@ -60,7 +60,7 @@ void ThreadFunc() {
 }
 
 int main() {
-    //—оздание объектов из разных потоков, должно быть 42 bulk суммарно (42 файла)
+    // Создание объектов из разных потоков, должно быть 42 bulk суммарно (42 файла)
     std::vector<std::thread> threads;
     for (int i = 0; i <= 6; ++i) {
         threads.emplace_back(std::thread{ []() { ThreadFunc(); }});
