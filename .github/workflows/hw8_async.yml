@@ -9,6 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - run: apt-get update && apt-get install -y libboost-dev libboost-all-dev
       - uses: actions/checkout@v2
         with:
           submodules: true
